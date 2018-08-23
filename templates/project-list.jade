@@ -11,38 +11,42 @@ mixin project-list-item(id, emoji, title, client, description, type, date, comin
     .project-list-item.coming-soon(id=id)
       .project-img(style="background-image: url('/projects/" + id + "/project-tile.jpg')")
       .project-text
-        h3= title
-        br
-        br
-        p.text-uppercase.text-smaller.text-spaced.text-tight.text-grey.block-bot-sm
-          if client
-            span= client
-            span &nbsp;&middot;&nbsp;
-          span= type
-          span &nbsp;&middot;&nbsp;
-          span= date
-        .dummy-text
-          .line
-          .line
-          .line
-          .line
-      p.coming-soon-flag Coming Soon
+        .row
+          .col-xs-12.col-md-4
+            p.coming-soon-flag Coming Soon
+            h3= title
+            p.text-uppercase.text-smaller.text-spaced.text-tight.text-grey.block-bot-sm
+              if client
+                span= client
+                span &nbsp;&middot;&nbsp;
+              span= type
+              span &nbsp;&middot;&nbsp;
+              span= date
+          
+          .col-xs-12.col-md-8
+            .dummy-text
+              .line
+              .line
+              .line
+              .line
 
   else
     a.project-list-item(id=id href="/projects/" + id)
       .project-img(style="background-image: url('/projects/" + id + "/project-tile-sm.jpg')")
       .project-text
-        h3= title
-        br
-        br
-        p.text-uppercase.text-smaller.text-spaced.text-tight.text-grey.block-bot-sm
-          if client
-            span= client
-            span &nbsp;&middot;&nbsp;
-          span= type
-          span &nbsp;&middot;&nbsp;
-          span= date
-        p.text-tight= description
+        .row
+          .col-xs-12.col-md-4
+            h3= title
+            p.text-uppercase.text-smaller.text-spaced.text-tight.text-grey.block-bot-sm
+              if client
+                span= client
+                span &nbsp;&middot;&nbsp;
+              span= type
+              span &nbsp;&middot;&nbsp;
+              span= date
+          
+          .col-xs-12.col-md-8
+            p.text-tight= description
 
 //- ===============================================================================================
 
@@ -57,21 +61,21 @@ block content
     .content-wrap
       .row
         .col-xs-12: h1 Projects
-        .col-xs-12.col-sm-6.col-md-8: +project-list-item("rivendell-design-system", "🏗", "Rivendell Design System", "WeWork", "A component-based pattern library upon which WeWork builds on-brand, accessible and consistent products that embody our digital brand guidelines.", "Design System", "2017–18", false)
-        .col-xs-12.col-sm-6.col-md-4: +project-list-item("wework-dot-com", "🏢", "WeWork.com", "WeWork", "", "Website", "2017–18", true)
-        .col-xs-12.col-sm-6.col-md-4: +project-list-item("wework-guest-wifi", "🖥", "Guest Wi-Fi", "WeWork", "A custom gated wi-fi experience for guests in WeWork spaces.", "Website", "2017", false)
-        //- .col-xs-12.col-sm-6.col-md-4: +project-list-item("wgsn-public-site", "🖥", "WGSN Public Website", "WGSN", "A new public face for the world's leading trend authority.", "Website", "2015", true)
-        .col-xs-12.col-sm-6.col-md-8: +project-list-item("wgsn-brand-guide", "🖌", "Rebrand & Style Guide", "WGSN", "A fresh look, and a live inventory of UI components, brand guidelines, brand assets, code snippets and developer guidelines for WGSN products.", "Design System", "2016", false)
-        .col-xs-12.col-sm-6.col-md-4: +project-list-item("wgsn-insight", "💡", "Insight", "WGSN", "A new product for WGSN, providing the C-suite and marketers with high-level information on future trends.", "Website", "2016", false)
-        .col-xs-12.col-sm-6.col-md-4: +project-list-item("wgsn-workspace", "📚", "Workspace & Image Library", "WGSN", "A hub for creative teams to work together, utilizing WGSN's millions of exclusive assets.", "Web App", "2016", false)
-        .col-xs-12.col-sm-6.col-md-4: +project-list-item("greekify", "🍻", "Greekify", "", "", "Mobile App", "2017", true)
+        .col-xs-12: +project-list-item("rivendell-design-system", "🏗", "Rivendell Design System", "WeWork", "A component-based pattern library upon which WeWork builds on-brand, accessible and consistent products that embody our digital brand guidelines.", "Design System", "2017–18", false)
+        .col-xs-12: +project-list-item("wework-dot-com", "🏢", "WeWork.com", "WeWork", "", "Website", "2017–18", true)
+        .col-xs-12: +project-list-item("wework-guest-wifi", "🖥", "Guest Wi-Fi", "WeWork", "A custom gated wi-fi experience for guests in WeWork spaces.", "Website", "2017", false)
+        //- .col-xs-12: +project-list-item("wgsn-public-site", "🖥", "WGSN Public Website", "WGSN", "A new public face for the world's leading trend authority.", "Website", "2015", true)
+        .col-xs-12: +project-list-item("greekify", "🍻", "Greekify", "", "", "Mobile App", "2017", true)
         
-        .col-xs-12.block-top-lg: h3 Older Projects
-        .col-xs-12.col-sm-6.col-md-4: +project-list-item("wgsn-city-by-city-app", "✈️", "City by City App", "WGSN", "Editor-curated listings, travel guides and trip planning tools.", "Mobile App", "2016", false)
-        .col-xs-12.col-sm-6.col-md-4: +project-list-item("wgsn-catwalks-app", "👗", "Catwalks App", "WGSN", "From the runway to your phone, see the latest collections from New York, London, Milan and Paris.", "Mobile App", "2015–16", false)
-        .col-xs-12.col-sm-6.col-md-4: +project-list-item("meat-cuts", "🥩", "Meat Cuts", "MLA", "Your number one destination for information about beef, lamb, veal and goat cuts.", "Mobile app", "2014", false)
-        .col-xs-12.col-sm-6.col-md-4: +project-list-item("the-blending-room", "🚬", "The Blending Room", "JR Cigars", "Everything you need to know about the latest cigar trends.", "Website", "2015", false)
-        .col-xs-12.col-sm-6.col-md-4: +project-list-item("shoppernova", "🛍", "ShopperNova", "Nova FM", "An undisputed leader in mobile marketing, location-based targeting and data-collection.", "Mobile app", "2014", false)
-        .col-xs-12.col-sm-6.col-md-4: +project-list-item("repassist", "💊", "RepAssist", "Novartis", "A streamlined solution tailored specifically to Novartis sales reps' needs.", "Tablet app", "2014", false)
-        //- .col-xs-12.col-sm-6.col-md-4: +project-list-item("rupert-graves", "🎬", "Rupert Graves", "", "A digital brand for the international actor.", "Website", "2015", false)
-        .col-xs-12.col-sm-6.col-md-4: +project-list-item("glenda-graff", "👰", "Glenda Graff", "", "An elite event planner for Sydney's eastern suburbs.", "Website", "2013–2014", false)
+        .col-xs-12.block-top-lg: h2 Older
+        .col-xs-12: +project-list-item("wgsn-brand-guide", "🖌", "Rebrand & Style Guide", "WGSN", "A fresh look, and a live inventory of UI components, brand guidelines, brand assets, code snippets and developer guidelines for WGSN products.", "Design System", "2016", false)
+        .col-xs-12: +project-list-item("wgsn-insight", "💡", "Insight", "WGSN", "A new product for WGSN, providing the C-suite and marketers with high-level information on future trends.", "Website", "2016", false)
+        .col-xs-12: +project-list-item("wgsn-workspace", "📚", "Workspace & Image Library", "WGSN", "A hub for creative teams to work together, utilizing WGSN's millions of exclusive assets.", "Web App", "2016", false)
+        .col-xs-12: +project-list-item("wgsn-city-by-city-app", "✈️", "City by City App", "WGSN", "Editor-curated listings, travel guides and trip planning tools.", "Mobile App", "2016", false)
+        .col-xs-12: +project-list-item("wgsn-catwalks-app", "👗", "Catwalks App", "WGSN", "From the runway to your phone, see the latest collections from New York, London, Milan and Paris.", "Mobile App", "2015–16", false)
+        .col-xs-12: +project-list-item("meat-cuts", "🥩", "Meat Cuts", "MLA", "Your number one destination for information about beef, lamb, veal and goat cuts.", "Mobile app", "2014", false)
+        //- .col-xs-12: +project-list-item("the-blending-room", "🚬", "The Blending Room", "JR Cigars", "Everything you need to know about the latest cigar trends.", "Website", "2015", false)
+        .col-xs-12: +project-list-item("shoppernova", "🛍", "ShopperNova", "Nova FM", "An undisputed leader in mobile marketing, location-based targeting and data-collection.", "Mobile app", "2014", false)
+        .col-xs-12: +project-list-item("repassist", "💊", "RepAssist", "Novartis", "A streamlined solution tailored specifically to Novartis sales reps' needs.", "Tablet app", "2014", false)
+        //- .col-xs-12: +project-list-item("rupert-graves", "🎬", "Rupert Graves", "", "A digital brand for the international actor.", "Website", "2015", false)
+        .col-xs-12: +project-list-item("glenda-graff", "👰", "Glenda Graff", "", "An elite event planner for Sydney's eastern suburbs.", "Website", "2013–2014", false)
