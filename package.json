@@ -5,7 +5,7 @@
     "moment": "^2.23.0",
     "sass": "^1.16.1",
     "typogr": "0.5.x",
-    "underscore": "1.4.x",
+    "underscore": "1.12.x",
     "wintersmith": "^2.5.0",
     "wintersmith-coffee": "^0.2.2",
     "wintersmith-livereload": "^1.0.1",
